@@ -1,2 +1,29 @@
 <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+
+<div class="container">
+  <p>User info</p>
+  <div class="row">
+    <div class="col">
+      <p>name </p>
+    <div class="col">
+      <p>title </p>
+    </div>
+    </div>
+  </div>
+
+ <div><%= link_to 'Edit', edit_user_path(id: @user.id) %></div>
+
+ <p>New book</p>
+ <%= form_with model: @book, method: :post do |f| %>
+
+ <p>Title</p>
+ <%= f.text_field :title %>
+
+ <p>Opinion</p>
+ <%= f.text_area :body %>
+
+<p><%= f.submit 'Create Book' %></p>
+<% end %>
+</div>
+
