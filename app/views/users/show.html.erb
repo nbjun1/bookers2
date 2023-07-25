@@ -8,7 +8,7 @@
      <h1>User info</h1>
       <table>
        <thead>
-        <!--% @user.each do |user| %>-->
+       <!--% @user.each do |user| %>-->
         <tr>
          <th>name</th>
          <th><!--%= user.name %--></th>
@@ -16,33 +16,25 @@
        </thead>
 
        <tbody>
-        <!--% @user.each do |user| %>-->
+
         <tr>
          <td>introduction</td>
          <td><!--%= user.introduction %--></td>
         </tr>
        </tbody>
+       <!--% end %-->
       </table>
 
 
       <div><%= link_to 'Edit', edit_user_path(id: @user.id) %></div>
 
-      <p>New book</p>
-       <%= form_with model: @book, method: :post do |f| %>
-
-      <p>Title</p>
-       <%= f.text_field :title %>
-
-      <p>Opinion</p>
-      <%= f.text_area :body %>
-
-      <p><%= f.submit 'Create Book' %></p>
-      <% end %>
+      <%=render 'books/new', books: @book %>
 
    </div>
 
 
       <div class="col-md-8">
+       <h1>Books</h1>
        <table>
         <thead>
          <tr>
@@ -50,6 +42,15 @@
           <th>Opinion</th>
          </tr>
         </thead>
+
+        <tbody>
+         <!--% @book.each do |book| %-->
+         <tr>
+          <td><!--%= book.title %--></td>
+          <td><!--%= book.body %--></td>
+         </tr>
+         <!--% end %-->
+        </tbody>
        </table>
       </div>
 
