@@ -3,10 +3,21 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-
     @users = User.all
+  end
 
+  def create
+    @book = Book.new(book_params)
 
+   if @book.save
+
+    flash[:notice] = "Book was successfully created"
+    redirect_to books_path(@book)
+
+   else
+    @books = Book.all
+    render :index
+   end
   end
 
   def show
@@ -23,6 +34,7 @@ class UsersController < ApplicationController
     @user =User.find(params[:id])
     if @user.update(user_params)
     redirect_to user_path(@user.id)
+
 
   else
     render :edit
