@@ -1,3 +1,8 @@
+<% books.each do |book| %>
+ <div>
+  <%= link_to new_book_path(book.id) do %>
+  <% end %>
+
   <p>New book</p>
   <% if @book.errors.any? %>
 
@@ -7,7 +12,7 @@
       <li><%= message %></li>
     <% end %>
    </ul>
- <% end %>
+  <% end %>
 
    <%= form_with model: @book, method: :post do |f| %>
 
@@ -20,3 +25,4 @@
    <p><%= f.submit 'Create Book' %></p>
    <% end %>
  </div>
+<% end %>

@@ -1,9 +1,19 @@
-<% @book.each do |book| %>
+<% books.each do |book| %>
  <div>
   <%= link_to new_book_path(book.id) do %>
   <% end %>
 
   <p>New book</p>
+  <% if @book.errors.any? %>
+
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+   <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+   </ul>
+  <% end %>
+
    <%= form_with model: @book, method: :post do |f| %>
 
    <p>Title</p>
