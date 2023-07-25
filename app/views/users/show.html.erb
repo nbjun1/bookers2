@@ -2,28 +2,50 @@
 
 
 <div class="container">
-  <p>User info</p>
+ <p><%= flash[:notice] %></p>
   <div class="row">
-    <div class="col">
-      <p>name </p>
-    <div class="col">
-      <p>title </p>
-    </div>
-    </div>
+   <div class="col-md-4">
+     <h1>User info</h1>
+      <table>
+       <thead>
+        <!--<% @user.each do |user| %>-->
+        <tr>
+         <th>name</th>
+         <th><%= user.name %></th>
+        </tr>
+       </thead>
+
+       <tbody>
+        <!--<% @user.each do |user| %>-->
+        <tr>
+         <tb>introduction</tb>
+         <tb><%= user.introduction %></tb>
+        </tr>
+       </tbody>
+      </table>
+
+
+      <div><%= link_to 'Edit', edit_user_path(id: @user.id) %></div>
+
+      <p>New book</p>
+       <%= form_with model: @book, method: :post do |f| %>
+
+      <p>Title</p>
+       <%= f.text_field :title %>
+
+      <p>Opinion</p>
+      <%= f.text_area :body %>
+
+      <p><%= f.submit 'Create Book' %></p>
+      <% end %>
+      </div>
+   </div>
+
+   <div>
+      <div class="col-md-8">
+
+      </div>
+   </div>
   </div>
-
- <div><%= link_to 'Edit', edit_user_path(id: @user.id) %></div>
-
- <p>New book</p>
- <%= form_with model: @book, method: :post do |f| %>
-
- <p>Title</p>
- <%= f.text_field :title %>
-
- <p>Opinion</p>
- <%= f.text_area :body %>
-
-<p><%= f.submit 'Create Book' %></p>
-<% end %>
 </div>
 

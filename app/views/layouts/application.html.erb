@@ -11,9 +11,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
     <header>
-      <p><%= flash[:notice] %></p>
+
       <div><%= link_to "Bookers", root_path %></div>
       <% if user_signed_in? %>
        <li>
@@ -45,7 +44,9 @@
       <% end %>
     </header>
    <%= yield %>
-  </body>
+  <main>
+   <p %= flash[:notice] %></p>
+  </main>
 
   <footer>
     <div class="container mt-5">
