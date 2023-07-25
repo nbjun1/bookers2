@@ -8,10 +8,10 @@
      <h1>User info</h1>
       <table>
        <thead>
-       <!--% @user.each do |user| %>-->
+
         <tr>
          <th>name</th>
-         <th><!--%= user.name %--></th>
+         <th><%= @user.name %></th>
         </tr>
        </thead>
 
@@ -19,16 +19,16 @@
 
         <tr>
          <td>introduction</td>
-         <td><!--%= user.introduction %--></td>
+         <td><%= @user.introduction %></td>
         </tr>
        </tbody>
-       <!--% end %-->
+       
       </table>
 
 
-      <div><%= link_to 'Edit', edit_user_path(id: @user.id) %></div>
+      <div><%= link_to 'Edit', edit_user_path(@user.id) %></div>
 
-      <%= render 'users/new', users: @users %>
+      <%= render 'books/new', book: @book %>
 
    </div>
 
