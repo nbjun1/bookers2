@@ -6,24 +6,15 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def create
-    @book = Book.new(book_params)
 
-   if @book.save
-
-    flash[:notice] = "Book was successfully created"
-    redirect_to books_path(@book)
-
-   else
-    @books = Book.all
-    render :index
-   end
-  end
 
   def show
     @user = User.find(params[:id])
     @books = @user.books
+
     @book = Book.new
+
+
   end
 
   def edit
