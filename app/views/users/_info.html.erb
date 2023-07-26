@@ -1,0 +1,22 @@
+<h1>User info</h1>
+<div class="container">
+ <p><%= flash[:notice] %></p>
+  <div class="row">
+   <div class="col-md-4">
+    <table>
+     <thead>
+      <tr>
+       <th>name</th>
+       <th><%= user.name %></th>
+      </tr>
+     </thead>
+
+     <tbody>
+      <tr>
+       <td>introduction</td>
+       <td><%= user.introduction %></td>
+      </tr>
+     </tbody>
+    </table>
+
+    <div><%= link_to 'Edit', edit_user_path(user.id) %></div>

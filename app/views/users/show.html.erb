@@ -1,37 +1,9 @@
 <h1>Users#show</h1>
 
 
-<div class="container">
- <p><%= flash[:notice] %></p>
-  <div class="row">
-   <div class="col-md-4">
-     <h1>User info</h1>
-      <table>
-       <thead>
+    <%= render 'users/info', user: @user %>
 
-        <tr>
-         <th>name</th>
-         <th><%= @user.name %></th>
-        </tr>
-       </thead>
-
-       <tbody>
-
-        <tr>
-         <td>introduction</td>
-         <td><%= @user.introduction %></td>
-        </tr>
-       </tbody>
-
-      </table>
-
-
-      <div><%= link_to 'Edit', edit_user_path(@user.id) %></div>
-
-      <%= render 'books/new', book: @book %>
-
-   </div>
-
+    <%= render 'books/new', book: @book %>
 
       <div class="col-md-8">
        <h1>Books</h1>
@@ -56,4 +28,3 @@
 
   </div>
 </div>
-
