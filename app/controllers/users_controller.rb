@@ -22,8 +22,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    @books = Book.all
+    @books = @user.books
+    @book = Book.new
   end
 
   def edit
@@ -35,11 +35,10 @@ class UsersController < ApplicationController
     if @user.update(user_params)
     redirect_to user_path(@user.id)
 
-
-  else
+    else
     render :edit
+    end
   end
- end
 
   private
 
