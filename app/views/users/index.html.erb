@@ -20,7 +20,7 @@
          <tr>
           <td><!--%= user.image %--></td>
           <td><%= user.name %></td>
-          <td><!--%= link_to 'Show', user(@user.id) --></td>
+          <td><%= link_to 'Show', user_path(id: user.id) %></td>
          </tr>
          <% end %>
         </tbody>
