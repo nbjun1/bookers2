@@ -29,8 +29,8 @@
           </td>
           <td><%= link_to @showbook.title, book_path %></td>
           <td><%= @showbook.body %></td>
-          <td><%= link_to 'Edit', edit_book_path(:id @book.id) %></td>
-          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: "本当に消しますか？" } %></td>
+          <td><%= link_to 'Edit', edit_book_path(@showbook.id) %></td>
+          <td><%= link_to 'Destroy', @books, method: :delete, data: { confirm: "本当に消しますか？" } %></td>
          </tr>
 
         </tbody>
