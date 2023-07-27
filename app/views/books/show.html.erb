@@ -19,11 +19,18 @@
         <tbody>
 
          <tr>
-          <td><%= @user.name %></td>
-          <td><%= @showbook.title %></td>
+          <td>
+           <% if @user.profile_image.attached? %>
+            <%= image_tag @user.profile_image, siza: "50x50" %>
+           <% else %>
+            <%= image_tag 'default-image', size: "50x50" %>
+           <% end %>
+           <p><%= link_to @user.name, user_path(@user.id) %></p>
+          </td>
+          <td><%= link_to @showbook.title, book_path %></td>
           <td><%= @showbook.body %></td>
-          <td><%#= link_to 'Edit', edit_book_path(id: book.id) %></td>
-          <td><%#= link_to 'Destroy', book, method: :delete, data: { confirm: "本当に消しますか？" } %></td>
+          <td><%= link_to 'Edit', edit_book_path(:id @book.id) %></td>
+          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: "本当に消しますか？" } %></td>
          </tr>
 
         </tbody>
