@@ -1,10 +1,21 @@
 <h1>Books#index</h1>
+<div class="container">
+ <% if @book.errors.any? %>
 
-<%= render 'users/info', user: @user %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <ul>
+   <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+   <% end %>
+  </ul>
+ <% end %>
 
-<%= render 'books/new', book: @newbook %>
+       <%= render 'users/info', user: @user %>
 
-<div class="col-md-8">
+       <%= render 'books/new', book: @book %>
+      </div><!-- col-md-4 -->
+
+      <div class="col-md-8">
        <h1>Books</h1>
        <table>
         <thead>
@@ -23,7 +34,7 @@
          <% end %>
         </tbody>
        </table>
-      </div>
+      </div><!-- col-md-8 -->
 
-  </div>
-</div>
+  </div><!-- row -->
+</div><!-- container -->
