@@ -2,21 +2,31 @@
 
 <div class="container">
  <div class="row">
-   <div class="col-md-2"></div>
-   <div class="col-md-8">
-     <h1>welcome to Bookers !!</h1>
-     <P>in Bookers,</P>
-      <br>
-     <p>you can share and exchange your opinions , inpressions , and emotions</p>
-      <br>
-     <p>about various books!</p>
-     <li>
-      <%= link_to "Log in", new_user_session_path %>
-     </li>
-     <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-     </li>
-   </div><!-- col-md-8 -->
-   <div class="col-md-2"></div>
+  <div class="col-md-8 mx-auto">
+   <h1>welcome to
+    <i class="fa-solid fa-book"></i>
+     Bookers !!</h1>
+    <P>in Bookers,</P>
+    <br>
+    <p>you can share and exchange your opinions , inpressions , and emotions</p>
+    <br>
+    <p>about various books!</p>
+  </div><!-- col-md-8 -->
+ </div><!-- row -->
+
+ <div class="row">
+  <div class="col-md6 mx-auto">
+   <%= link_to new_user_session_path do %>
+    <i class="btn btn-info btn-block mb-2 sign_in">Log in</i>
+   <% end %>
+  </div>
+ </div>
+
+ <div class="row">
+  <div class="col-md6 mx-auto">
+   <%= link_to new_user_registration_path do %>
+    <i class="btn btn-info btn-block mb-2 sign_up">Sign up</i>
+   <% end %>
+  </div>
  </div><!-- row -->
 </div><!-- container -->

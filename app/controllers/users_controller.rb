@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+before_action :authenticate_user!
+
   def index
 
     @infouser = current_user
@@ -8,10 +10,8 @@ class UsersController < ApplicationController
 
   end
 
-
-
   def show
-    
+
     @user = current_user
     @newbook = Book.new
     @books = Book.where(user_id: current_user.id)
