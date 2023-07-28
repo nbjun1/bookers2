@@ -1,2 +1,22 @@
-<h1>Homes#top</h1>
+<p><%= flash[:notice] %></p>
 
+<div class="container">
+ <div class="row">
+   <div class="col-md-2"></div>
+   <div class="col-md-8">
+     <h1>welcome to Bookers !!</h1>
+     <P>in Bookers,</P>
+      <br>
+     <p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <br>
+     <p>about various books!</p>
+     <li>
+      <%= link_to "Log in", new_user_session_path %>
+     </li>
+     <li>
+      <%= link_to "Sign up", new_user_registration_path %>
+     </li>
+   </div><!-- col-md-8 -->
+   <div class="col-md-2"></div>
+ </div><!-- row -->
+</div><!-- container -->
