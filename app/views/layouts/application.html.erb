@@ -12,7 +12,7 @@
   </head>
 
  <header>
-  <nav class="navbar nabvar-expend-lg navbar-light ">
+  <nav class="navbar nabvar-expend-lg bg-dark navbar-dark">
    <div class="container">
     <a class="navbar-brand" href="/">Bookers</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,45 +23,53 @@
      <ul class="navbar-nav ml-auto">
        <% if user_signed_in? %>
         <li class="nav-item">
-         <%= link_to user_path(current_user.id) do %>
-          <i class="fa-solid fa-home"></i>Home
+         <%= link_to user_path(current_user.id), class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-home"></i>
+          <span>Home</span>
          <% end %>
         </li>
         <li class="nav-item">
-         <%= link_to users_path do %>
-          <i class="fa-solid fa-users"></i>Users
+         <%= link_to users_path, class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-users"></i>
+          <span>User</span>
          <% end %>
         </li>
         <li class="nav-item">
-         <%= link_to books_path do %>
-          <i class="fa-solid fa-book-open"></i>Books
+         <%= link_to books_path, class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-book-open"></i>
+          <span>Books</span>
          <% end %>
         </li>
         <li class="nav-item">
-         <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fa-solid fa-sign-out-alt"></i>Log out
+         <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-sign-out-alt"></i>
+          <span>Log out</span>
          <% end %>
         </li>
 
        <% else user_signed_in? %>
         <li class="nav-item">
-         <%= link_to root_path do %>
-          <i class="fa-solid fa-home"></i>Home
+         <%= link_to root_path, class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-home"></i>
+          <span>Home</span>
          <% end %>
         </li>
         <li class="nav-item">
-         <%= link_to home_about_path do %>
-          <i class="fa-solid fa-link"></i>About
+         <%= link_to home_about_path, class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-link"></i>
+          <span>About</span>
          <% end %>
         </li>
         <li class="nav-item">
-         <%= link_to new_user_registration_path do %>
-          <i class="fa-solid fa-user-plus"></i>Sign up
+         <%= link_to new_user_registration_path, class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Sign up</span>
          <% end %>
         </li>
         <li class="nav-item">
-         <%= link_to new_user_session_path do %>
-          <i class="fa-solid fa-sign-in-alt"></i>Log in
+         <%= link_to new_user_session_path, class: 'btn btn-dark' do %>
+          <i class="fa-solid fa-sign-in-alt"></i>
+          <span>Log in</span>
          <% end %>
         </li>
        <% end %>

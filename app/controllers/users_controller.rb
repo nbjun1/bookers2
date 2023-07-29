@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-before_action :authenticate_user!
+
 
   def index
 
@@ -11,8 +11,8 @@ before_action :authenticate_user!
   end
 
   def show
-
-    @user = current_user
+    
+    @user = User.find(params[:id])
     @newbook = Book.new
     @books = Book.where(user_id: current_user.id)
 
@@ -21,7 +21,7 @@ before_action :authenticate_user!
   def edit
     @user = User.find(params[:id])
     unless @user == current_user
-      redirect_to  edit_user_path
+      redirect_to user_path(current_user.id)
     end
   end
 
