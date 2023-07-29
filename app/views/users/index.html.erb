@@ -1,11 +1,13 @@
 <h1>users#index</h1>
 
 <div class="container">
+  <p><%= flash[:notice] %></p>
+  <div class="row">
+   <div class="col-md-4">
+    <%= render 'users/info', user: @infouser %>
 
-       <%= render 'users/info', user: @infouser %>
-
-       <%= render 'books/new', book: @newbook %>
-      </div><!-- render内col-md-4 -->
+    <%= render 'books/new', book: @newbook %>
+   </div><!-- col-md-4 -->
 
       <div class="col-md-8">
        <h1>Users</h1>
