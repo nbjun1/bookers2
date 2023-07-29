@@ -4,15 +4,16 @@ class BooksController < ApplicationController
 
     @book = Book.new
     @user = current_user
-   
     @books = Book.all
 
   end
 
   def show
+
     @book = Book.find(params[:id])
     @user = @book.user
     @newbook = Book.new
+
   end
 
   def new
@@ -37,8 +38,8 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    unless @user == current_user
-      redirect_to  edit_book_path
+    unless @book.user == current_user
+      redirect_to books_path
     end
   end
 

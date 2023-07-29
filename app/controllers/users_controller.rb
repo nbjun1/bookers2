@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-
-
   def index
 
     @infouser = current_user

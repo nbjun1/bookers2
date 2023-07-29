@@ -1,18 +1,19 @@
 
 <h1>Books#show</h1>
-<div class="container">
-  <p><%= flash[:notice] %></p>
+<main>
+<p><%= flash[:notice] %></p>
+ <div class="container px-5 px-sm-0">
   <div class="row">
-   <div class="col-md-4">
+   <div class="col-md-3">
        <%= render 'users/info', user: @user %>
 
        <%= render 'books/new', book: @newbook %>
       </div><!-- col-md-4 -->
 
-      <div class="col-md-8">
+      <div class="col-md-8 offset-md-1">
        <h1>Book detail</h1>
        <table>
-        <% if @user.id == current_user.id %>
+        <% if @book.user == current_user %>
         <thead>
          <tr>
           <th></th>
@@ -32,12 +33,13 @@
            <p><%= link_to @user.name, user_path(@user.id) %></p></td>
           <td><%= link_to @book.title, book_path %></td>
           <td><%= @book.body %></td>
+
           <td><%= link_to 'Edit', edit_book_path(@book.id), class: 'btn btn-success' %></td>
 
           <td><%= link_to 'Destroy', @book, class: 'btn btn-danger', method: :delete, data: { confirm: "本当に消しますか？" } %></td>
          </tr>
 
-        <% else @user.id == current_user.id %>
+        <% else @book.user == current_user %>
         <thead>
          <tr>
           <th></th>
@@ -65,4 +67,5 @@
       </div><!-- col-md-8 -->
 
   </div><!-- row -->
-</div><!-- container -->
+ </div><!-- container -->
+</main>

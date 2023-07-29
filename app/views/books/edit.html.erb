@@ -1,4 +1,4 @@
-<h1>Books#edit</h1>
+<h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
 
@@ -23,8 +23,9 @@
   <%= f.text_area :body %>
  </div>
 
- <p><%= f.submit 'Update Book' %></p>
-
+ <p>
+  <input class="btn btn-success" type="submit" value="Update Book">
+ </p>
 <% end %>
 
 
@@ -32,3 +33,4 @@
  <%= link_to 'Show', book_path %>
   |
  <%= link_to "Back", books_path %>
+</p>

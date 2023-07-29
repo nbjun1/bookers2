@@ -1,15 +1,16 @@
 <h1>users#index</h1>
+<main>
+ <p><%= flash[:notice] %></p>
+ <div class="container px-5 px-sm-0">
 
-<div class="container">
-  <p><%= flash[:notice] %></p>
   <div class="row">
-   <div class="col-md-4">
+   <div class="col-md-3">
     <%= render 'users/info', user: @infouser %>
 
     <%= render 'books/new', book: @newbook %>
    </div><!-- col-md-4 -->
 
-      <div class="col-md-8">
+      <div class="col-md-8 offset-md-1">
        <h1>Users</h1>
        <table>
         <thead>
@@ -39,4 +40,5 @@
       </div><!-- col-md-8 -->
 
   </div><!-- row -->
-</div><!-- container -->
+ </div><!-- container -->
+</main>
