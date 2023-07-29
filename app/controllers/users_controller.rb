@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     @newbook = Book.new
-    @books = Book.where(user_id: current_user.id)
+    @books = Book.where(user_id: @user.id)
 
   end
 
